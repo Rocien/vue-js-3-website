@@ -1,10 +1,16 @@
 <script setup lang="ts"></script>
 
 <template>
-  <h1>You did it!</h1>
+  <h1>Init the Project</h1>
   <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
+    I need to rebuild this website
+    <a
+      href="https://trifecta.rentsync.com/residential/scenic-drive-apartments"
+      target="_blank"
+      rel="noopener"
+      >Trifecta</a
+    >
+    With Ruben's assistance
   </p>
 </template>
 
