@@ -1,18 +1,4 @@
 <template>
-  <h1>Init the Project</h1>
-
-  <h2 class="uk-margin">
-    I need to rebuild this website
-    <a
-      href="https://trifecta.rentsync.com/residential/scenic-drive-apartments"
-      target="_blank"
-      rel="noopener"
-    >
-      Trifecta
-    </a>
-    With Ruben's assistance
-  </h2>
-
   <header>
     <nav>
       <ul>
@@ -29,6 +15,22 @@
       </ul>
     </nav>
   </header>
+
+  <h1>Init the Project</h1>
+
+  <h2 class="uk-margin">
+    I need to rebuild this website
+    <a
+      href="https://trifecta.rentsync.com/residential/scenic-drive-apartments"
+      target="_blank"
+      rel="noopener"
+    >
+      Trifecta
+    </a>
+    With Ruben's assistance
+  </h2>
+
+
 
   <router-view v-slot="{ Component }">
     <component 
