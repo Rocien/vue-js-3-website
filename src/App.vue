@@ -2,11 +2,12 @@
   <header>
     <nav>
       <ul>
-        <li 
-          v-for="(menu, index) in menuItems" 
+        <li
+          v-for="(menu, index) in menuItems"
           :key="index"
+          :data-key="index"
         >
-          <router-link 
+          <router-link
             :to="menu.path"
           >
             {{ menu.name }}
@@ -30,11 +31,14 @@
     With Ruben's assistance
   </h2>
 
-
-
   <router-view v-slot="{ Component }">
-    <component 
+    <component
       :is="Component"
+      :page="{
+        pageTitle: 'home page title'
+      }"
+      isTitleSmall
+      @buttonClicked="handlePageClick"
     />
   </router-view>
 </template>
@@ -46,9 +50,16 @@ export default {
       menuItems: [
         { name: 'Home', path: '/' },
         { name: 'Properties', path: '/properties' },
+        { name: 'About', path: '/about' }
       ],
+      childPageCounter: 0
     }
   },
+  methods: {
+    handlePageClick(event: unknown) {
+      this.childPageCounter = event
+    }
+  }
 }
 </script>
 
