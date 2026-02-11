@@ -1,68 +1,115 @@
 <template>
-  <header>
-    <nav>
-      <ul>
-        <li
-          v-for="(menu, index) in menuItems"
-          :key="index"
-          :data-key="index"
-        >
-          <router-link
-            :to="menu.path"
-          >
-            {{ menu.name }}
+  <!-- Top Nav Bar -->
+  <header class="site-header uk-padding uk-background-default">
+    <div class="uk-container uk-container-expand">
+      <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+        <!-- added loge here -->
+        <div class="uk-navbar-left">
+          <!-- Am using picsum as placeholder logo for now I will add my own logo -->
+          <router-link to="/" class="site-header__logo uk-navbar-item uk-logo">
+            <img src="https://picsum.photos/140/40" alt="logo" class="site-header__logo-img" />
           </router-link>
-        </li>
-      </ul>
-    </nav>
+        </div>
+
+        <!-- Main Links -->
+        <div class="uk-navbar-center">
+          <ul class="uk-navbar-nav">
+            <!-- router-link for navigation -->
+            <!-- I just added other buttons to match the original site -->
+            <li>
+              <router-link to="/properties">Residential</router-link>
+            </li>
+            <li>
+              <a href="#">Commercial</a>
+            </li>
+            <li>
+              <a href="#">Blogs</a>
+            </li>
+            <li>
+              <router-link to="/about">About Us</router-link>
+            </li>
+            <li>
+              <router-link to="#">Contact</router-link>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right nav: Phone - Heart - Language -->
+        <div class="uk-navbar-right">
+          <div class="site-header__right uk-flex uk-flex-middle uk-flex-nowrap">
+            <!-- Phone N* -->
+            <a
+              class="site-header__phone uk-link-reset uk-flex uk-flex-middle"
+              href="tel:+19053975088"
+            >
+              <!-- Phone icon here -->
+              <span uk-icon="icon: receiver; ratio: 1.1" class="site-header__icon"></span>
+              <span class="site-header__phone-text">(905) 397 5088</span>
+            </a>
+
+            <!-- Heart icon -->
+            <button
+              class="uk-button uk-button-text site-header__icon-btn"
+              type="button"
+              aria-label="Favorites"
+            >
+              <span uk-icon="icon: heart; ratio: 1.1"></span>
+            </button>
+
+            <!-- Language -->
+            <button class="uk-button uk-button-text site-header__lang" type="button">
+              EN <span uk-icon="icon: chevron-down; ratio: 0.9"></span>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </div>
   </header>
 
-  <h1>Init the Project</h1>
-
-  <h2 class="uk-margin">
-    I need to rebuild this website
-    <a
-      href="https://trifecta.rentsync.com/residential/scenic-drive-apartments"
-      target="_blank"
-      rel="noopener"
-    >
-      Trifecta
-    </a>
-    With Ruben's assistance
-  </h2>
-
-  <router-view v-slot="{ Component }">
-    <component
-      :is="Component"
-      :page="{
-        pageTitle: 'home page title'
-      }"
-      isTitleSmall
-      @buttonClicked="handlePageClick"
-    />
-  </router-view>
+  <!-- current page rendered here -->
+  <router-view />
 </template>
 
 <script lang="ts">
-export default {
-  data() {
-    return {
-      menuItems: [
-        { name: 'Home', path: '/' },
-        { name: 'Properties', path: '/properties' },
-        { name: 'About', path: '/about' }
-      ],
-      childPageCounter: 0
-    }
-  },
-  methods: {
-    handlePageClick(event: unknown) {
-      this.childPageCounter = event
-    }
-  }
-}
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  name: 'App'
+})
 </script>
 
 <style lang="scss">
+.site-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 
+  &__logo-img {
+    display: block;
+    height: 32px;
+    width: auto;
+    border-radius: 2px;
+  }
+
+  &__right {
+    gap: 1.25rem;
+  }
+
+  &__phone {
+    gap: 0.5rem;
+  }
+
+  &__phone-text {
+    font-weight: 500;
+  }
+
+  &__icon-btn {
+    padding: 0;
+    min-width: auto;
+  }
+
+  &__lang {
+    padding: 0;
+    min-width: auto;
+    font-weight: 500;
+  }
+}
 </style>

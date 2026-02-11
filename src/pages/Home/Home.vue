@@ -1,32 +1,27 @@
 <template>
   <div class="uk-container">
-    <h1 
+    <h1
       v-if="activePage.pageTitle"
       class="home-page__title"
       :class="{
         'home-page__title--small': isTitleSmall
       }"
     >
-      {{activePage.pageTitle}}
+      {{ activePage.pageTitle }}
     </h1>
 
     <p>
       {{ buildingAddress }}
     </p>
 
-    <button 
-      class="uk-button uk-button-primary"
-      @click="handleClickEvent"
-    >
-      Click me
-    </button>
+    <button class="uk-button uk-button-primary" @click="handleClickEvent">Click me</button>
 
     <p v-if="counter > 0">{{ counterComputed }}</p>
   </div>
 </template>
 
 <script lang="ts">
-import { PropType } from 'vue';
+import { PropType } from 'vue'
 
 type Page = {
   pageTitle: string
@@ -34,8 +29,8 @@ type Page = {
 
 type Property = {
   buildingName: string
-  streetNumber: number,
-  streetName?: string,
+  streetNumber: number
+  streetName?: string
   promotions?: []
 }
 
@@ -56,7 +51,7 @@ export default {
     return {
       property: {
         buildingName: 'building 1',
-        streetNumber: 40,
+        streetNumber: 40
       } as Property | null,
       counter: 0
     }
@@ -83,28 +78,12 @@ export default {
   },
   async created() {
     await this.getProperty()
-    // setTimeout(() => {
-
-    //   this.property = {
-    //     buildingName: 'Im a building',
-    //     promotions: ['promotion 1']
-    //   }
-    //   console.log('2', this.$refs)
-    // }, 2500)
   },
-  mounted() {
-    // console.log('3', this.$refs)s
-  },
-  unmounted() {
-
-  },
+  mounted() {},
+  unmounted() {},
   methods: {
     async getProperty() {
       // code to get the property
-    },
-    handleClickEvent() {
-      this.counter++
-      this.$emit('buttonClicked', this.counter)
     }
   }
 }
