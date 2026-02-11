@@ -1,6 +1,6 @@
 <template>
   <section class="hero">
-    <div class="uk-container uk-container-expand">
+    <div class="uk-container-expand">
       <div class="hero__grid">
         <!-- Left panel (green background) -->
         <div class="hero__left">
