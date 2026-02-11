@@ -1,4 +1,15 @@
-:root {
-  --white: #ffffff;
-  --text-color: #1b1425;
-}
+$white: #ffffff;
+$text-color: #1b1425;
+
+/* Brand Greens (Hero section colors) */
+$green-dark: #2f3b1f;
+$green-light: #4a5d2c;
+
+/* Neutral Colors */
+$gray-light: #f5f5f5;
+$gray-medium: #cccccc;
+$gray-dark: #333333;
+
+/* Accent */
+$primary: $green-dark;
+$secondary: $green-light;

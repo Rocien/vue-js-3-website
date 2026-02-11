@@ -71,5 +71,19 @@ export default defineComponent({
     object-fit: cover;
     display: block;
   }
+  /* Media query */
+  @media (max-width: 960px) {
+    .hero__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero__left {
+      padding: 3rem 1.5rem;
+    }
+
+    .hero__right {
+      height: 320px;
+    }
+  }
 }
 </style>
