@@ -2,7 +2,7 @@
   <!-- Top Nav Bar -->
   <header class="site-header uk-padding uk-background-default">
     <div class="uk-container uk-container-expand">
-      <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+      <nav class="uk-navbar-container uk-navbar-transparent nav-bar" uk-navbar>
         <!-- added loge here -->
         <div class="uk-navbar-left">
           <!-- Am using picsum as placeholder logo for now I will add my own logo -->
@@ -12,7 +12,7 @@
         </div>
 
         <!-- Main Links in the center -->
-        <div class="uk-navbar-center">
+        <div class="nav-menu">
           <ul class="uk-navbar-nav">
             <!-- router-link for navigation -->
             <!-- I just added other buttons to match the original site -->
@@ -107,6 +107,9 @@ export default defineComponent({
     padding: 0;
     min-width: auto;
     font-weight: 500;
+  }
+  .nav-bar {
+    gap: 30px;
   }
 }
 </style>

@@ -1,5 +1,6 @@
 <template>
   <section class="hero">
+    <div class="nav-bar"></div>
     <div class="uk-container-expand">
       <div class="hero__grid">
         <!-- Left panel (green background) -->
