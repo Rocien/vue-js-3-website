@@ -20,9 +20,6 @@
               <router-link to="/properties">Residential</router-link>
             </li>
             <li>
-              <a href="#">Commercial</a>
-            </li>
-            <li>
               <a href="#">Blogs</a>
             </li>
             <li>
