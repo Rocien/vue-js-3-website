@@ -11,7 +11,7 @@
           </router-link>
         </div>
 
-        <!-- Main Links -->
+        <!-- Main Links in the center -->
         <div class="uk-navbar-center">
           <ul class="uk-navbar-nav">
             <!-- router-link for navigation -->
