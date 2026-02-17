@@ -79,11 +79,6 @@ export default defineComponent({
     width: 100%;
     font-size: 1.2rem;
   }
-
-  &__right {
-    position: relative;
-    overflow: hidden;
-  }
 }
 
 .hero__content {
