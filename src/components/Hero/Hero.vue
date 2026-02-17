@@ -6,8 +6,16 @@
         <!-- Left panel (green background) -->
         <div class="hero__left">
           <h1 class="hero__title">Find your new home</h1>
-          <div class="hero__search-placeholder" aria-hidden="false">
-            <!-- I'll add the actual search UI later when Ruben instruct me -->
+          <div class="hero__search">
+            <div class="hero__search-inner">
+              <span uk-icon="icon: search; ratio: 1"></span>
+
+              <input
+                class="hero__search-input"
+                type="text"
+                placeholder="Search By City Or Property"
+              />
+            </div>
           </div>
         </div>
 
@@ -53,12 +61,31 @@ export default defineComponent({
     margin: 0;
   }
 
-  /* my placeholder where the search UI will go later */
-  &__search-placeholder {
-    height: 120px;
+  &__search {
     margin-top: 2rem;
+    max-width: 920px;
+  }
+
+  &__search-inner {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.12);
     border-radius: 6px;
-    background: rgba(255, 255, 255, 0.08);
+    padding: 0.9rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  &__search-input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+    background: transparent;
+
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.45);
+    }
   }
 
   &__right {
