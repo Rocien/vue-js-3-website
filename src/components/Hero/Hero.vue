@@ -1,20 +1,44 @@
 <template>
   <section class="hero">
-    <div class="hero__grid">
-      <div class="hero__left">
-        <div class="hero__content">
-          <h1 class="hero__title">Find your new home</h1>
-        </div>
-      </div>
+    <div class="hero__slider" uk-slider="finite: false; autoplay: true">
+      <div class="uk-slider-container uk-position-relative">
+        <ul class="uk-slider-items">
+          <li>
+            <img class="hero__image" src="https://picsum.photos/1600/900?random=1" alt="photo 1" />
+          </li>
+          <li>
+            <img class="hero__image" src="https://picsum.photos/1600/900?random=2" alt="photo 2" />
+          </li>
+          <li>
+            <img class="hero__image" src="https://picsum.photos/1600/900?random=3" alt="photo 3" />
+          </li>
+        </ul>
 
-      <div class="hero__right">
-        <img class="hero__image" src="https://picsum.photos/1200/900" alt="Hero building" />
+        <!-- here the left / right arrows -->
+        <a
+          class="uk-position-center-left uk-position-small uk-hidden-hover"
+          href="#"
+          uk-slidenav-previous
+          uk-slider-item="previous"
+          aria-label="Previous"
+        ></a>
+        <a
+          class="uk-position-center-right uk-position-small uk-hidden-hover"
+          href="#"
+          uk-slidenav-next
+          uk-slider-item="next"
+          aria-label="Next"
+        ></a>
       </div>
     </div>
 
-    <div class="hero__search">
-      <div class="hero__search-inner">
-        <input class="hero__search-input" type="text" placeholder="Search By City Or Property" />
+    <div class="hero__content">
+      <h1 class="hero__title">Find your new home</h1>
+
+      <div class="hero__search">
+        <div class="hero__search-inner">
+          <input class="hero__search-input" type="text" placeholder="Search By City Or Property" />
+        </div>
       </div>
     </div>
   </section>
@@ -22,7 +46,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-
 export default defineComponent({
   name: 'HomePage'
 })
@@ -33,26 +56,13 @@ export default defineComponent({
 .hero {
   background: #ffffff;
   position: relative;
-
-  &__grid {
-    display: grid;
-    grid-template-columns: 60% 40%;
-    min-height: 650px;
-  }
-
-  &__left {
-    background: #2f3b1f;
-    padding: 5rem 4rem 3rem;
-    position: relative;
-  }
+  height: 650px;
+  overflow: hidden;
 
   &__title {
     color: #ffffff;
-    font-size: 3.2rem;
-    line-height: 1.1;
+    font-size: 3.5rem;
     font-weight: 300;
-    margin: 0;
-    margin-top: 10rem;
   }
 
   &__search-inner {
@@ -62,7 +72,6 @@ export default defineComponent({
     padding: 2.5rem;
     display: flex;
     align-items: center;
-    gap: 0.75rem;
   }
 
   &__search-input {
@@ -75,35 +84,31 @@ export default defineComponent({
     position: relative;
     overflow: hidden;
   }
+}
 
-  &__image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
+.hero__content {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
 
-  .hero__search {
-    position: absolute;
-    top: 190px;
-    left: 4rem;
-    width: calc(100% - 8rem);
-    max-width: 1100px;
-    margin-top: 10rem;
-  }
-  /* Media query */
-  @media (max-width: 960px) {
-    .hero__grid {
-      grid-template-columns: 1fr;
-    }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-    .hero__left {
-      padding: 3rem 1.5rem;
-    }
+  padding: 0 4rem;
+  pointer-events: none;
+}
 
-    .hero__right {
-      height: 320px;
-    }
-  }
+.hero__search {
+  width: calc(100% - 8rem);
+  max-width: 1100px;
+}
+.hero__search,
+.hero__search-inner,
+.hero__search-input {
+  pointer-events: auto;
 }
 </style>
