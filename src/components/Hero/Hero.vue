@@ -52,6 +52,7 @@ export default defineComponent({
     line-height: 1.1;
     font-weight: 300;
     margin: 0;
+    margin-top: 10rem;
   }
 
   &__search-inner {
@@ -88,6 +89,7 @@ export default defineComponent({
     left: 4rem;
     width: calc(100% - 8rem);
     max-width: 1100px;
+    margin-top: 10rem;
   }
   /* Media query */
   @media (max-width: 960px) {
