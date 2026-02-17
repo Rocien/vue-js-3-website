@@ -1,28 +1,20 @@
 <template>
   <section class="hero">
-    <div class="nav-bar"></div>
-    <div class="uk-container-expand">
-      <div class="hero__grid">
-        <!-- Left panel (green background) -->
-        <div class="hero__left">
+    <div class="hero__grid">
+      <div class="hero__left">
+        <div class="hero__content">
           <h1 class="hero__title">Find your new home</h1>
-          <div class="hero__search">
-            <div class="hero__search-inner">
-              <span uk-icon="icon: search; ratio: 1"></span>
-
-              <input
-                class="hero__search-input"
-                type="text"
-                placeholder="Search By City Or Property"
-              />
-            </div>
-          </div>
         </div>
+      </div>
 
-        <!-- Right panel (image) -->
-        <div class="hero__right">
-          <img class="hero__image" src="https://picsum.photos/1200/900" alt="Hero building" />
-        </div>
+      <div class="hero__right">
+        <img class="hero__image" src="https://picsum.photos/1200/900" alt="Hero building" />
+      </div>
+    </div>
+
+    <div class="hero__search">
+      <div class="hero__search-inner">
+        <input class="hero__search-input" type="text" placeholder="Search By City Or Property" />
       </div>
     </div>
   </section>
@@ -40,6 +32,7 @@ export default defineComponent({
 /* left green panel and right image */
 .hero {
   background: #ffffff;
+  position: relative;
 
   &__grid {
     display: grid;
@@ -61,31 +54,20 @@ export default defineComponent({
     margin: 0;
   }
 
-  &__search {
-    margin-top: 2rem;
-    max-width: 920px;
-  }
-
   &__search-inner {
     background: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.12);
     border-radius: 6px;
-    padding: 0.9rem 1.25rem;
+    padding: 2.5rem;
     display: flex;
     align-items: center;
     gap: 0.75rem;
   }
 
   &__search-input {
-    border: none;
-    outline: none;
+    padding: 1rem;
     width: 100%;
-    font-size: 1rem;
-    background: transparent;
-
-    &::placeholder {
-      color: rgba(0, 0, 0, 0.45);
-    }
+    font-size: 1.2rem;
   }
 
   &__right {
@@ -98,6 +80,14 @@ export default defineComponent({
     height: 100%;
     object-fit: cover;
     display: block;
+  }
+
+  .hero__search {
+    position: absolute;
+    top: 190px;
+    left: 4rem;
+    width: calc(100% - 8rem);
+    max-width: 1100px;
   }
   /* Media query */
   @media (max-width: 960px) {
