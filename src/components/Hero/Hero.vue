@@ -3,13 +3,13 @@
     <div class="hero__slider" uk-slider="finite: false; autoplay: true">
       <div class="uk-slider-container uk-position-relative">
         <ul class="uk-slider-items">
-          <li>
+          <li class="hero__image-list">
             <img class="hero__image" src="https://picsum.photos/1600/900?random=1" alt="photo 1" />
           </li>
-          <li>
+          <li class="hero__image-list">
             <img class="hero__image" src="https://picsum.photos/1600/900?random=2" alt="photo 2" />
           </li>
-          <li>
+          <li class="hero__image-list">
             <img class="hero__image" src="https://picsum.photos/1600/900?random=3" alt="photo 3" />
           </li>
         </ul>
@@ -52,7 +52,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-/* left green panel and right image */
 .hero {
   background: #ffffff;
   position: relative;
@@ -83,7 +82,7 @@ export default defineComponent({
 
 .hero__content {
   position: absolute;
-  top: 4.5rem;
+  bottom: 2.5rem;
   left: 0;
   margin-left: 8rem;
   height: 100%;
@@ -106,5 +105,17 @@ export default defineComponent({
 .hero__search-inner,
 .hero__search-input {
   pointer-events: auto;
+}
+
+.hero__image-list {
+  width: 100%;
+  height: 100%;
+}
+
+.hero__image {
+  width: 100%;
+  height: 650px;
+  object-fit: cover;
+  display: block;
 }
 </style>
