@@ -83,8 +83,9 @@ export default defineComponent({
 
 .hero__content {
   position: absolute;
-  bottom: 1.5rem;
+  top: 4.5rem;
   left: 0;
+  margin-left: 8rem;
   height: 100%;
   width: 100%;
   z-index: 10;
@@ -93,13 +94,13 @@ export default defineComponent({
   flex-direction: column;
   justify-content: center;
 
-  padding: 0 4rem;
+  padding: 0 8rem;
   pointer-events: none;
 }
 
 .hero__search {
   width: calc(100% - 8rem);
-  max-width: 1100px;
+  max-width: 1200px;
 }
 .hero__search,
 .hero__search-inner,
