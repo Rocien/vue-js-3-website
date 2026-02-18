@@ -30,6 +30,7 @@
           aria-label="Next"
         ></a>
       </div>
+      <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin-top"></ul>
     </div>
 
     <div class="hero__content">
@@ -117,5 +118,16 @@ export default defineComponent({
   height: 650px;
   object-fit: cover;
   display: block;
+}
+
+.hero__slider {
+  position: relative;
+}
+
+.uk-dotnav {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 </style>
