@@ -1,30 +1,30 @@
 <template>
   <!-- Top Nav Bar -->
-  <header class="site-header uk-padding uk-background-default">
-    <div class="uk-container uk-container-expand">
-      <nav class="uk-navbar-container uk-navbar-transparent nav-bar" uk-navbar>
+  <header class="site-header uk-padding-small uk-background-default">
+    <div class="uk-container uk-container-expand nav__container">
+      <nav class="uk-navbar-container uk-navbar-transparent nav-bar__lego" uk-navbar>
         <!-- Left Logo -->
         <div class="uk-navbar-left">
           <router-link to="/" class="site-header__logo uk-navbar-item uk-logo">
-            <!-- Using picsum placeholder for now -->
+            <!-- i am using picsum placeholder for now -->
             <img src="https://picsum.photos/140/40" alt="logo" class="site-header__logo-img" />
           </router-link>
         </div>
 
-        <!-- Left: Navigation Links -->
-        <div class="nav-menu">
-          <ul class="uk-navbar-nav">
+        <!-- left navigation links -->
+        <div class="site-header__menu">
+          <ul class="uk-navbar-nav site-header__list">
             <li>
-              <router-link to="/properties">Residential</router-link>
+              <router-link to="/properties" class="site-header__nav-list">Residential</router-link>
             </li>
             <li>
-              <a href="#">Blogs</a>
+              <a href="#" class="site-header__nav-list">Blogs</a>
             </li>
             <li>
-              <router-link to="/about">About Us</router-link>
+              <router-link to="/about" class="site-header__nav-list">About Us</router-link>
             </li>
             <li>
-              <router-link to="#">Contact</router-link>
+              <router-link to="#" class="site-header__nav-list">Contact</router-link>
             </li>
           </ul>
         </div>
@@ -37,7 +37,7 @@
               class="site-header__phone uk-link-reset uk-flex uk-flex-middle"
               href="tel:+19053975088"
             >
-              <span uk-icon="icon: receiver; ratio: 1.1"></span>
+              <span uk-icon="icon: receiver; ratio: 1.5" class="site-header__phone-icon"></span>
               <span class="site-header__phone-text">(905) 397 5088</span>
             </a>
 
@@ -47,7 +47,7 @@
               type="button"
               aria-label="Favorites"
             >
-              <span uk-icon="icon: heart; ratio: 1.1"></span>
+              <span uk-icon="icon: heart; ratio: 1.5"></span>
             </button>
 
             <!-- Language -->
@@ -80,8 +80,22 @@ export default defineComponent({
     border-radius: 2px;
   }
 
+  &__list {
+    gap: 3rem;
+  }
+
+  &__nav-list {
+    font-size: 1.2rem;
+    font-weight: 200;
+  }
+
+  &__menu {
+    gap: 5rem;
+  }
+
   &__right {
-    gap: 1.25rem;
+    gap: 5rem;
+    font-size: 1.5rem;
   }
 
   &__phone {
@@ -89,7 +103,7 @@ export default defineComponent({
   }
 
   &__phone-text {
-    font-weight: 500;
+    font-weight: 200;
   }
 
   &__icon-btn {
@@ -100,11 +114,16 @@ export default defineComponent({
   &__lang {
     padding: 0;
     min-width: auto;
-    font-weight: 500;
+    font-weight: 200;
+    font-size: 1.5rem;
   }
 
-  .nav-bar {
-    gap: 30px;
+  .nav-bar__lego {
+    gap: 10rem;
   }
+}
+
+.nav__container {
+  gap: 5rem;
 }
 </style>
