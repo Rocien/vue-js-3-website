@@ -1,5 +1,8 @@
 <template>
-  <section class="hero">
+  <section 
+    class="hero hero__section"
+    :style="heroComputedStyles"
+  >
     <div class="hero__slider" uk-slider="finite: false; autoplay: true">
       <div class="uk-slider-container uk-position-relative">
         <ul class="uk-slider-items">
@@ -34,11 +37,13 @@
     </div>
 
     <div class="hero__content">
-      <h1 class="hero__title">Find your new home</h1>
+      <div class="hero__content__inner">
+        <h1 class="hero__title">Find your new home</h1>
 
-      <div class="hero__search">
-        <div class="hero__search-inner">
-          <input class="hero__search-input" type="text" placeholder="Search By City Or Property" />
+        <div class="hero__search">
+          <div class="hero__search-inner">
+            <input class="hero__search-input" type="text" placeholder="Search By City Or Property" />
+          </div>
         </div>
       </div>
     </div>
@@ -48,16 +53,37 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 export default defineComponent({
-  name: 'HomePage'
+  name: 'HeroComponent',
+  props: {
+    heroBackgroundColor: {
+      type: String,
+      default: 'green'
+    }
+  },
+  computed: {
+    heroComputedStyles() {
+      if (!this.heroBackgroundColor) {
+        return {}
+      }
+
+      return {
+        '--hero-background-color': `${this.heroBackgroundColor}`
+      }
+    }
+  }
 })
 </script>
 
 <style lang="scss">
 .hero {
-  background: #ffffff;
-  position: relative;
-  height: 650px;
-  overflow: hidden;
+  --uk-dot-bottom-pos: 40px;
+
+  &__section {
+    background: #ffffff;
+    position: relative;
+    height: var(--hero-section-height, 650px);
+    overflow: hidden;
+  }
 
   &__title {
     color: #ffffff;
@@ -79,55 +105,61 @@ export default defineComponent({
     width: 100%;
     font-size: 1.2rem;
   }
-}
 
-.hero__content {
-  position: absolute;
-  bottom: 2.5rem;
-  left: 0;
-  margin-left: 8rem;
-  height: 100%;
-  width: 100%;
-  z-index: 10;
+  &__content {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 0;
+    z-index: 10;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 
-  padding: 0 8rem;
-  pointer-events: none;
-}
+    padding: 0 8rem;
+    pointer-events: none;
 
-.hero__search {
-  width: calc(100% - 8rem);
-  max-width: 1200px;
-}
-.hero__search,
-.hero__search-inner,
-.hero__search-input {
-  pointer-events: auto;
-}
+    display: flex;
+    align-items: center;
 
-.hero__image-list {
-  width: 100%;
-  height: 100%;
-}
+    &__inner {
+      pointer-events: all;
+    }
+  }
 
-.hero__image {
-  width: 100%;
-  height: 650px;
-  object-fit: cover;
-  display: block;
-}
+  &__search {
+    width: calc(100% - 8rem);
+    max-width: 1200px;
+  }
 
-.hero__slider {
-  position: relative;
-}
+  &__search,
+  &__search-inner,
+  &__search-input {
+    pointer-events: auto;
+  }
 
-.uk-dotnav {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  &__image-list {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__image {
+    width: 100%;
+    height: 650px;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__slider {
+    position: relative;
+  }
+
+  .uk-dotnav {
+    position: absolute;
+    bottom: var(--uk-dot-bottom-pos, 20px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 </style>

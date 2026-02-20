@@ -1,4 +1,11 @@
 :root {
   --white: #ffffff;
   --text-color: #1b1425;
+  --action: red;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }

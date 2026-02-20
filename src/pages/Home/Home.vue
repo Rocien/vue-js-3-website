@@ -1,6 +1,10 @@
 <template>
   <!-- here Home page content -->
   <Hero />
+
+  <div>
+    <span class="uk-dotnav" />
+  </div>
 </template>
 
 <script lang="ts">
