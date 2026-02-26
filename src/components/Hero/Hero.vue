@@ -1,8 +1,5 @@
 <template>
-  <section 
-    class="hero hero__section"
-    :style="heroComputedStyles"
-  >
+  <section class="hero hero__section" :style="heroComputedStyles">
     <div class="hero__slider" uk-slider="finite: false; autoplay: true">
       <div class="uk-slider-container uk-position-relative">
         <ul class="uk-slider-items">
@@ -17,7 +14,6 @@
           </li>
         </ul>
 
-        <!-- here the left / right arrows -->
         <a
           class="uk-position-center-left uk-position-small uk-hidden-hover"
           href="#"
@@ -33,7 +29,7 @@
           aria-label="Next"
         ></a>
       </div>
-      <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin-top"></ul>
+      <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin-top hero__dotnav"></ul>
     </div>
 
     <div class="hero__content">
@@ -42,7 +38,11 @@
 
         <div class="hero__search">
           <div class="hero__search-inner">
-            <input class="hero__search-input" type="text" placeholder="Search By City Or Property" />
+            <input
+              class="hero__search-input"
+              type="text"
+              placeholder="Search By City Or Property"
+            />
           </div>
         </div>
       </div>
@@ -53,24 +53,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 export default defineComponent({
-  name: 'HeroComponent',
-  props: {
-    heroBackgroundColor: {
-      type: String,
-      default: 'green'
-    }
-  },
-  computed: {
-    heroComputedStyles() {
-      if (!this.heroBackgroundColor) {
-        return {}
-      }
-
-      return {
-        '--hero-background-color': `${this.heroBackgroundColor}`
-      }
-    }
-  }
+  name: 'HeroComponent'
 })
 </script>
 
@@ -108,29 +91,29 @@ export default defineComponent({
 
   &__content {
     position: absolute;
-    bottom: 2.5rem;
-    left: 0;
+    inset: 0;
     z-index: 10;
-
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    padding: 0 8rem;
-    pointer-events: none;
 
     display: flex;
     align-items: center;
+    padding: 0 4rem;
+    pointer-events: none;
 
     &__inner {
       pointer-events: all;
     }
   }
 
+  &__content__inner {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    pointer-events: all;
+  }
+
   &__search {
-    width: calc(100% - 8rem);
-    max-width: 1200px;
+    width: 100%;
+    max-width: 100%;
   }
 
   &__search,
@@ -155,11 +138,33 @@ export default defineComponent({
     position: relative;
   }
 
-  .uk-dotnav {
+  &__dotnav {
     position: absolute;
     bottom: var(--uk-dot-bottom-pos, 20px);
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  @media (max-width: 75rem) {
+    &__content {
+      padding: 0 4rem;
+    }
+  }
+
+  @media (max-width: 62rem) {
+    &__content {
+      padding: 0 3.5rem;
+    }
+  }
+
+  @media (max-width: 48rem) {
+    &__content {
+      padding: 0 1.5rem;
+    }
+
+    &__title {
+      font-size: 2.4rem;
+    }
   }
 }
 </style>
