@@ -81,7 +81,7 @@ export default defineComponent({
   }
 
   &__list {
-    gap: 3rem;
+    gap: 2rem;
   }
 
   &__nav-list {
@@ -90,11 +90,11 @@ export default defineComponent({
   }
 
   &__menu {
-    gap: 5rem;
+    gap: 2rem;
   }
 
   &__right {
-    gap: 5rem;
+    gap: 2rem;
     font-size: 1.5rem;
   }
 
@@ -119,11 +119,11 @@ export default defineComponent({
   }
 
   .nav-bar__lego {
-    gap: 10rem;
+    gap: 2rem;
   }
 }
 
 .nav__container {
-  gap: 5rem;
+  gap: 2rem;
 }
 </style>
