@@ -18,6 +18,4 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
-/* Keep empty or only global layout styles */
-</style>
+<style lang="scss"></style>
