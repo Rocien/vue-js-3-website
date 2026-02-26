@@ -11,16 +11,51 @@
 import { defineComponent } from 'vue'
 import PropertyCard, { Property } from '@/components/PropertyCard/PropertyCard.vue'
 import propertiesJson from '@/data/properties.json'
+type FilterOption = {
+  text: string
+  value: unknown
+}
 
 export default defineComponent({
   name: 'PropertiesPage',
   components: {
     PropertyCard
   },
+  data() {
+    return {
+      filterOptions: [] as FilterOption[]
+    }
+  },
   computed: {
     properties(): Property[] {
       return (propertiesJson as { data: Property[] }).data
     }
+  },
+  created() {
+    const allBeds: string[] = []
+    for (const property of propertiesJson.data) {
+      property.bedsSummary.forEach((bed: number) => {
+        if (!allBeds.includes(bed.toString())) {
+          allBeds.push(bed.toString())
+        }
+        // console.log(property)
+      })
+    }
+    const bedroomsTextMap: Record<number, string> = {
+      0: 'Studio',
+      1: 'One Bedroom',
+      2: 'Two Bedrooms',
+      3: 'Three Bedrooms',
+      4: 'Four Bedrooms'
+    }
+    for (const bed of allBeds) {
+      const bedRoomText = bedroomsTextMap[Number(bed)]
+      this.filterOptions.push({
+        text: bedRoomText || `${bed} bedrooms`,
+        value: bed
+      })
+    }
+    console.log(this.filterOptions)
   }
 })
 </script>
