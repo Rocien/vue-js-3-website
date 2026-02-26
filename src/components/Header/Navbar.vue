@@ -113,7 +113,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .site-header {
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 
