@@ -1,0 +1,145 @@
+{
+  "data": [
+    {
+      "id": 28,
+      "buildingName": "Chandler Towers",
+      "address": "150 Rosemary Lane",
+      "buildingType": {
+        "id": 6,
+        "name": "Mid rise apartment"
+      },
+      "photo": "building_1.jpg",
+      "minimumPrice": 2400,
+      "bedsSummary": [0, 1, 2],
+      "featured": true,
+      "availability": 0
+    },
+    {
+      "id": 373,
+      "buildingName": "Ariel Apartments",
+      "address": "123 Luxury Blvd",
+      "buildingType": {
+        "id": 18,
+        "name": "Luxury apartment"
+      },
+      "photo": "building_2.jpg",
+      "minimumPrice": 1900,
+      "bedsSummary": [0, 1],
+      "featured": false,
+      "availability": 1
+    },
+    {
+      "id": 1185,
+      "buildingName": "Marshall Macdonald",
+      "address": "456 Industrial Way",
+      "buildingType": {
+        "id": 14,
+        "name": "Warehouse"
+      },
+      "photo": "building_3.jpg",
+      "minimumPrice": 950,
+      "bedsSummary": [1],
+      "featured": false,
+      "availability": 1
+    },
+    {
+      "id": 1186,
+      "buildingName": "Willow Place Apartments",
+      "address": "789 Willow Ln",
+      "buildingType": {
+        "id": 18,
+        "name": "Luxury apartment"
+      },
+      "photo": "building_4.jpg",
+      "minimumPrice": 1200,
+      "bedsSummary": [0],
+      "featured": false,
+      "availability": 1
+    },
+    {
+      "id": 1187,
+      "buildingName": "Scenic Drive Apartments",
+      "address": "23 Scenic Drive",
+      "buildingType": {
+        "id": 6,
+        "name": "Mid rise apartment"
+      },
+      "photo": "building_5.jpg",
+      "minimumPrice": 1750,
+      "bedsSummary": [0, 1, 2, 3],
+      "featured": false,
+      "availability": 1
+    },
+    {
+      "id": 1188,
+      "buildingName": "Parkmount",
+      "address": "777 Parkmount Ave",
+      "buildingType": {
+        "id": 7,
+        "name": "Single family home"
+      },
+      "photo": "building_6.jpg",
+      "minimumPrice": 2100,
+      "bedsSummary": [2, 3, 4],
+      "featured": false,
+      "availability": 0
+    },
+    {
+      "id": 1189,
+      "buildingName": "Parkway Lanes",
+      "address": "11 Parkway Blvd",
+      "buildingType": {
+        "id": 12,
+        "name": "Corporate / Commercial"
+      },
+      "photo": "building_7.jpg",
+      "minimumPrice": 3400,
+      "bedsSummary": [1],
+      "featured": false,
+      "availability": 1
+    },
+    {
+      "id": 1190,
+      "buildingName": "Hyrule Castle",
+      "address": "1 Triforce Way",
+      "buildingType": {
+        "id": 11,
+        "name": "Castle"
+      },
+      "photo": "building_8.jpg",
+      "minimumPrice": 5000,
+      "bedsSummary": [3, 4],
+      "featured": false,
+      "availability": 0
+    },
+    {
+      "id": 1191,
+      "buildingName": "Dunder Mifflin",
+      "address": "1725 Slough Ave",
+      "buildingType": {
+        "id": 12,
+        "name": "Corporate / Commercial"
+      },
+      "photo": "building_9.jpg",
+      "minimumPrice": 2700,
+      "bedsSummary": [1, 2],
+      "featured": false,
+      "availability": 1
+    },
+    {
+      "id": 1192,
+      "buildingName": "The Dumphys",
+      "address": "404 Suburbia Rd",
+      "buildingType": {
+        "id": 7,
+        "name": "Single family home"
+      },
+      "photo": "building_10.jpg",
+      "minimumPrice": 2300,
+      "bedsSummary": [2, 3],
+      "featured": false,
+      "availability": 1
+    }
+  ],
+  "meta": null
+}

@@ -15,12 +15,14 @@
     "format": "prettier --write --experimental-cli src/"
   },
   "dependencies": {
+    "uikit": "^3.25.10",
     "vue": "^3.5.27",
     "vue-router": "^5.0.1"
   },
   "devDependencies": {
     "@tsconfig/node24": "^24.0.4",
     "@types/node": "^24.10.9",
+    "@types/uikit": "^3.23.0",
     "@vitejs/plugin-vue": "^6.0.3",
     "@vue/eslint-config-typescript": "^14.6.0",
     "@vue/tsconfig": "^0.8.1",
