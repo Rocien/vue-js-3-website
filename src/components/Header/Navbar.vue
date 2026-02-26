@@ -1,13 +1,13 @@
 <template>
   <!-- Top Nav Bar -->
   <header class="site-header uk-padding-small uk-background-default">
-    <div class="uk-container uk-container-expand nav__container">
+    <div class="uk-container uk-container-expand site-header__container">
       <nav class="uk-navbar-container uk-navbar-transparent nav-bar__lego" uk-navbar>
         <!-- Left Logo -->
         <div class="uk-navbar-left">
           <router-link to="/" class="site-header__logo uk-navbar-item uk-logo">
             <!-- i am using picsum placeholder for now -->
-            <img src="https://picsum.photos/140/40" alt="logo" class="site-header__logo-img" />
+            <img src="/trifecta-logo.png" alt="logo" class="site-header__logo-img" />
           </router-link>
         </div>
 
@@ -119,11 +119,49 @@ export default defineComponent({
   }
 
   .nav-bar__lego {
-    gap: 2rem;
+    gap: 5rem;
   }
-}
 
-.nav__container {
-  gap: 2rem;
+  @media (max-width: 75rem) {
+    .site-header {
+      &__list {
+        gap: 1.5rem;
+      }
+
+      &__nav-list {
+        font-size: 1rem;
+      }
+
+      &__right {
+        gap: 1.5rem;
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  @media (max-width: 62rem) {
+    .site-header {
+      &__menu {
+        display: none;
+      }
+
+      &__phone-text {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 48rem) {
+    .site-header {
+      &__right {
+        gap: 1rem;
+        font-size: 1.1rem;
+      }
+
+      &__logo-img {
+        height: 26px;
+      }
+    }
+  }
 }
 </style>
