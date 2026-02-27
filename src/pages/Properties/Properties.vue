@@ -1,6 +1,24 @@
 <template>
   <section class="properties-page uk-container uk-container-expand">
     <h1 class="properties-page__title">Our Residential Properties</h1>
+
+    <!-- 
+      Filters 
+
+      connect the select filter with the v-model,
+      and store it in a variable call appliedBeds
+
+      if appliedBeds has a value, update the computed
+      property and filter the options
+    -->
+    <div>
+      <SelectFilter 
+        :options="filterOptions"
+        v-bind="selectAttrs"
+      />
+    </div>
+
+    <!-- List of cards -->
     <div class="properties-page__grid">
       <PropertyCard v-for="property in properties" :key="property.id" :property="property" />
     </div>
@@ -8,9 +26,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import PropertyCard, { Property } from '@/components/PropertyCard/PropertyCard.vue'
+import { defineComponent, type PropType } from 'vue'
+import PropertyCard, { type Property } from '@/components/PropertyCard/PropertyCard.vue'
 import propertiesJson from '@/data/properties.json'
+import SelectFilter from '@/components/Filters/select-filter.vue'
+
 type FilterOption = {
   text: string
   value: unknown
@@ -19,11 +39,19 @@ type FilterOption = {
 export default defineComponent({
   name: 'PropertiesPage',
   components: {
-    PropertyCard
+    PropertyCard,
+    SelectFilter
+  },
+  props: {
+    selectAttrs: {
+      type: Object as PropType<InstanceType<typeof SelectFilter>['$props']>,
+      default: null
+    }
   },
   data() {
     return {
-      filterOptions: [] as FilterOption[]
+      filterOptions: [] as FilterOption[],
+      appliedBeds: ''
     }
   },
   computed: {
@@ -33,14 +61,15 @@ export default defineComponent({
   },
   created() {
     const allBeds: string[] = []
+
     for (const property of propertiesJson.data) {
       property.bedsSummary.forEach((bed: number) => {
         if (!allBeds.includes(bed.toString())) {
           allBeds.push(bed.toString())
         }
-        // console.log(property)
       })
     }
+
     const bedroomsTextMap: Record<number, string> = {
       0: 'Studio',
       1: 'One Bedroom',
@@ -48,6 +77,7 @@ export default defineComponent({
       3: 'Three Bedrooms',
       4: 'Four Bedrooms'
     }
+
     for (const bed of allBeds) {
       const bedRoomText = bedroomsTextMap[Number(bed)]
       this.filterOptions.push({
@@ -55,7 +85,6 @@ export default defineComponent({
         value: bed
       })
     }
-    console.log(this.filterOptions)
   }
 })
 </script>
