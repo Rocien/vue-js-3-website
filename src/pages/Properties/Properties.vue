@@ -10,6 +10,10 @@
 
       if appliedBeds has a value, update the computed
       property and filter the options
+
+      remember types, remeber a reset,
+
+      EXTRATIP... how do you add a "select all option???" tip => null??
     -->
     <div>
       <SelectFilter 
@@ -56,7 +60,11 @@ export default defineComponent({
   },
   computed: {
     properties(): Property[] {
-      return (propertiesJson as { data: Property[] }).data
+      if (!this.appliedBeds) {
+        return (propertiesJson as { data: Property[] }).data
+      }
+
+      return []
     }
   },
   created() {
