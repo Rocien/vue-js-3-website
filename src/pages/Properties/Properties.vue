@@ -16,13 +16,9 @@
       EXTRATIP... how do you add a "select all option???" tip => null??
     -->
     <div>
-      <SelectFilter 
-        :options="filterOptions"
-        v-bind="selectAttrs"
-      />
+      <SelectFilter :options="filterOptions" v-bind="selectAttrs" v-model="appliedBeds" />
     </div>
 
-    <!-- List of cards -->
     <div class="properties-page__grid">
       <PropertyCard v-for="property in properties" :key="property.id" :property="property" />
     </div>
@@ -37,7 +33,7 @@ import SelectFilter from '@/components/Filters/select-filter.vue'
 
 type FilterOption = {
   text: string
-  value: unknown
+  value: string | null
 }
 
 export default defineComponent({
@@ -55,16 +51,22 @@ export default defineComponent({
   data() {
     return {
       filterOptions: [] as FilterOption[],
-      appliedBeds: ''
+      appliedBeds: null as string | null
     }
   },
   computed: {
     properties(): Property[] {
-      if (!this.appliedBeds) {
-        return (propertiesJson as { data: Property[] }).data
+      const allProperties = (propertiesJson as { data: Property[] }).data
+
+      if (this.appliedBeds === null) {
+        return allProperties
       }
 
-      return []
+      const bedNumber = Number(this.appliedBeds)
+
+      return allProperties.filter((property) => {
+        return property.bedsSummary?.includes(bedNumber)
+      })
     }
   },
   created() {
@@ -72,11 +74,15 @@ export default defineComponent({
 
     for (const property of propertiesJson.data) {
       property.bedsSummary.forEach((bed: number) => {
-        if (!allBeds.includes(bed.toString())) {
-          allBeds.push(bed.toString())
+        const bedAsString = bed.toString()
+
+        if (!allBeds.includes(bedAsString)) {
+          allBeds.push(bedAsString)
         }
       })
     }
+
+    allBeds.sort((a, b) => Number(a) - Number(b))
 
     const bedroomsTextMap: Record<number, string> = {
       0: 'Studio',
@@ -86,8 +92,14 @@ export default defineComponent({
       4: 'Four Bedrooms'
     }
 
+    this.filterOptions.push({
+      text: 'All bedrooms',
+      value: null
+    })
+
     for (const bed of allBeds) {
       const bedRoomText = bedroomsTextMap[Number(bed)]
+
       this.filterOptions.push({
         text: bedRoomText || `${bed} bedrooms`,
         value: bed
