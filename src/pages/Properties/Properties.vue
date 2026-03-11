@@ -26,15 +26,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, type PropType } from 'vue'
+import { defineComponent } from 'vue'
 import PropertyCard, { type Property } from '@/components/PropertyCard/PropertyCard.vue'
 import propertiesJson from '@/data/properties.json'
 import SelectFilter from '@/components/Filters/select-filter.vue'
-
-type FilterOption = {
-  text: string
-  value: string | null
-}
+import type { FilterOption } from '@/types';
 
 export default defineComponent({
   name: 'PropertiesPage',
@@ -44,7 +40,7 @@ export default defineComponent({
   },
   props: {
     selectAttrs: {
-      type: Object as PropType<InstanceType<typeof SelectFilter>['$props']>,
+      type: Object,
       default: null
     }
   },
