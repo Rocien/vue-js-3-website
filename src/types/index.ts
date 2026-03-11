@@ -12,14 +12,15 @@ export type FilterOption = {
   value: string | null
 }
 
-// type TSelectInputSize = Omit<TSelectFilter, 'label'>
-
-// export type TSelectFilterOptionalProps = {
-//   inputSize?: TSelectFilterSizes
-// }
-
-// export type TSelectFilter = TSelectFilterOptionalProps & TSelectFilterRequired
-
-// import SelectFilter from '@/components/Filters/select-filter.vue'
-
-// export type TSelectFilter = InstanceType<typeof SelectFilter>['$props']
+/**
+ * Hey Ross
+ * 
+ * Check type-guards, return types, difference between types
+ * and interfaces.
+ * 
+ * Try adding type to any component you see, and ask yourself
+ * how complicated is it to maintain, meaning try reducing 
+ * hardcoded declarations.
+ * 
+ * DO NOT USE ANY
+ */
