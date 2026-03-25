@@ -4,6 +4,7 @@
       "id": 28,
       "buildingName": "Chandler Towers",
       "address": "150 Rosemary Lane",
+      "categoryType": "residential",
       "buildingType": {
         "id": 6,
         "name": "Mid rise apartment"
@@ -18,6 +19,7 @@
       "id": 373,
       "buildingName": "Ariel Apartments",
       "address": "123 Luxury Blvd",
+      "categoryType": "residential",
       "buildingType": {
         "id": 18,
         "name": "Luxury apartment"
@@ -32,6 +34,7 @@
       "id": 1185,
       "buildingName": "Marshall Macdonald",
       "address": "456 Industrial Way",
+      "categoryType": "commercial",
       "buildingType": {
         "id": 14,
         "name": "Warehouse"
@@ -46,6 +49,7 @@
       "id": 1186,
       "buildingName": "Willow Place Apartments",
       "address": "789 Willow Ln",
+      "categoryType": "residential",
       "buildingType": {
         "id": 18,
         "name": "Luxury apartment"
@@ -60,6 +64,7 @@
       "id": 1187,
       "buildingName": "Scenic Drive Apartments",
       "address": "23 Scenic Drive",
+      "categoryType": "residential",
       "buildingType": {
         "id": 6,
         "name": "Mid rise apartment"
@@ -74,6 +79,7 @@
       "id": 1188,
       "buildingName": "Parkmount",
       "address": "777 Parkmount Ave",
+      "categoryType": "residential",
       "buildingType": {
         "id": 7,
         "name": "Single family home"
@@ -88,6 +94,7 @@
       "id": 1189,
       "buildingName": "Parkway Lanes",
       "address": "11 Parkway Blvd",
+      "categoryType": "commercial",
       "buildingType": {
         "id": 12,
         "name": "Corporate / Commercial"
@@ -102,6 +109,7 @@
       "id": 1190,
       "buildingName": "Hyrule Castle",
       "address": "1 Triforce Way",
+      "categoryType": "residential",
       "buildingType": {
         "id": 11,
         "name": "Castle"
@@ -116,6 +124,7 @@
       "id": 1191,
       "buildingName": "Dunder Mifflin",
       "address": "1725 Slough Ave",
+      "categoryType": "commercial",
       "buildingType": {
         "id": 12,
         "name": "Corporate / Commercial"
@@ -130,6 +139,7 @@
       "id": 1192,
       "buildingName": "The Dumphys",
       "address": "404 Suburbia Rd",
+      "categoryType": "residential",
       "buildingType": {
         "id": 7,
         "name": "Single family home"
@@ -137,6 +147,306 @@
       "photo": "building_10.jpg",
       "minimumPrice": 2300,
       "bedsSummary": [2, 3],
+      "featured": false,
+      "availability": 1
+    },
+    {
+      "id": 1193,
+      "buildingName": "Maple Crest Homes",
+      "address": "88 Maple Crescent",
+      "categoryType": "residential",
+      "buildingType": {
+        "id": 7,
+        "name": "Single family home"
+      },
+      "photo": "building_1.jpg",
+      "minimumPrice": 2450,
+      "bedsSummary": [2, 3, 4],
+      "featured": false,
+      "availability": 1
+    },
+    {
+      "id": 1194,
+      "buildingName": "Summit Lofts",
+      "address": "310 Summit Street",
+      "categoryType": "residential",
+      "buildingType": {
+        "id": 6,
+        "name": "Mid rise apartment"
+      },
+      "photo": "building_2.jpg",
+      "minimumPrice": 1650,
+      "bedsSummary": [0, 1, 2],
+      "featured": true,
+      "availability": 1
+    },
+    {
+      "id": 1195,
+      "buildingName": "Oak & Iron Storage",
+      "address": "52 Freight Court",
+      "categoryType": "commercial",
+      "buildingType": {
+        "id": 14,
+        "name": "Warehouse"
+      },
+      "photo": "building_3.jpg",
+      "minimumPrice": 1400,
+      "bedsSummary": [1],
+      "featured": false,
+      "availability": 1
+    },
+    {
+      "id": 1196,
+      "buildingName": "Harborline Suites",
+      "address": "14 Marina Walk",
+      "categoryType": "residential",
+      "buildingType": {
+        "id": 18,
+        "name": "Luxury apartment"
+      },
+      "photo": "building_4.jpg",
+      "minimumPrice": 3200,
+      "bedsSummary": [1, 2, 3],
+      "featured": true,
+      "availability": 0
+    },
+    {
+      "id": 1197,
+      "buildingName": "Cedar View Estates",
+      "address": "700 Cedar Heights",
+      "categoryType": "residential",
+      "buildingType": {
+        "id": 7,
+        "name": "Single family home"
+      },
+      "photo": "building_5.jpg",
+      "minimumPrice": 2800,
+      "bedsSummary": [3, 4],
+      "featured": false,
+      "availability": 1
+    },
+    {
+      "id": 1198,
+      "buildingName": "Atlas Business Plaza",
+      "address": "901 Enterprise Dr",
+      "categoryType": "commercial",
+      "buildingType": {
+        "id": 12,
+        "name": "Corporate / Commercial"
+      },
+      "photo": "building_6.jpg",
+      "minimumPrice": 4100,
+      "bedsSummary": [1, 2],
+      "featured": false,
+      "availability": 1
+    },
+    {
+      "id": 1199,
+      "buildingName": "Rosebank Residences",
+      "address": "19 Rosebank Ave",
+      "categoryType": "residential",
+      "buildingType": {
+        "id": 6,
+        "name": "Mid rise apartment"
+      },
+      "photo": "building_7.jpg",
+      "minimumPrice": 1780,
+      "bedsSummary": [0, 1, 2],
+      "featured": false,
+      "availability": 1
+    },
+    {
+      "id": 1200,
+      "buildingName": "Granite Point Logistics",
+      "address": "430 Cargo Blvd",
+      "categoryType": "commercial",
+      "buildingType": {
+        "id": 14,
+        "name": "Warehouse"
+      },
+      "photo": "building_8.jpg",
+      "minimumPrice": 2300,
+      "bedsSummary": [1],
+      "featured": false,
+      "availability": 0
+    },
+    {
+      "id": 1201,
+      "buildingName": "The Monarch",
+      "address": "2 Royal Gardens",
+      "categoryType": "residential",
+      "buildingType": {
+        "id": 18,
+        "name": "Luxury apartment"
+      },
+      "photo": "building_9.jpg",
+      "minimumPrice": 3600,
+      "bedsSummary": [1, 2, 3],
+      "featured": true,
+      "availability": 1
+    },
+    {
+      "id": 1202,
+      "buildingName": "Glenfield Court",
+      "address": "55 Glenfield Road",
+      "categoryType": "residential",
+      "buildingType": {
+        "id": 6,
+        "name": "Mid rise apartment"
+      },
+      "photo": "building_10.jpg",
+      "minimumPrice": 1525,
+      "bedsSummary": [0, 1],
+      "featured": false,
+      "availability": 1
+    },
+    {
+      "id": 1203,
+      "buildingName": "Silverline Offices",
+      "address": "300 Ledger Lane",
+      "categoryType": "commercial",
+      "buildingType": {
+        "id": 12,
+        "name": "Corporate / Commercial"
+      },
+      "photo": "building_1.jpg",
+      "minimumPrice": 2950,
+      "bedsSummary": [1],
+      "featured": false,
+      "availability": 1
+    },
+    {
+      "id": 1204,
+      "buildingName": "Birch Hollow",
+      "address": "48 Birch Hollow",
+      "categoryType": "residential",
+      "buildingType": {
+        "id": 7,
+        "name": "Single family home"
+      },
+      "photo": "building_2.jpg",
+      "minimumPrice": 2150,
+      "bedsSummary": [2, 3],
+      "featured": false,
+      "availability": 0
+    },
+    {
+      "id": 1205,
+      "buildingName": "Skyline Terraces",
+      "address": "817 Horizon Ave",
+      "categoryType": "residential",
+      "buildingType": {
+        "id": 18,
+        "name": "Luxury apartment"
+      },
+      "photo": "building_3.jpg",
+      "minimumPrice": 3350,
+      "bedsSummary": [1, 2],
+      "featured": true,
+      "availability": 1
+    },
+    {
+      "id": 1206,
+      "buildingName": "Foundry Exchange",
+      "address": "76 Ironworks St",
+      "categoryType": "commercial",
+      "buildingType": {
+        "id": 12,
+        "name": "Corporate / Commercial"
+      },
+      "photo": "building_4.jpg",
+      "minimumPrice": 3850,
+      "bedsSummary": [1, 2],
+      "featured": false,
+      "availability": 1
+    },
+    {
+      "id": 1207,
+      "buildingName": "Westbrook Flats",
+      "address": "120 Westbrook Dr",
+      "categoryType": "residential",
+      "buildingType": {
+        "id": 6,
+        "name": "Mid rise apartment"
+      },
+      "photo": "building_5.jpg",
+      "minimumPrice": 1680,
+      "bedsSummary": [0, 1, 2],
+      "featured": false,
+      "availability": 1
+    },
+    {
+      "id": 1208,
+      "buildingName": "Prairie Works Depot",
+      "address": "605 Prairie Industry Rd",
+      "categoryType": "commercial",
+      "buildingType": {
+        "id": 14,
+        "name": "Warehouse"
+      },
+      "photo": "building_6.jpg",
+      "minimumPrice": 1950,
+      "bedsSummary": [1],
+      "featured": false,
+      "availability": 1
+    },
+    {
+      "id": 1209,
+      "buildingName": "Elmwood Manor",
+      "address": "909 Elmwood Terrace",
+      "categoryType": "residential",
+      "buildingType": {
+        "id": 7,
+        "name": "Single family home"
+      },
+      "photo": "building_7.jpg",
+      "minimumPrice": 2600,
+      "bedsSummary": [3, 4, 5],
+      "featured": false,
+      "availability": 1
+    },
+    {
+      "id": 1210,
+      "buildingName": "Northgate Commons",
+      "address": "44 Northgate Circle",
+      "categoryType": "commercial",
+      "buildingType": {
+        "id": 12,
+        "name": "Corporate / Commercial"
+      },
+      "photo": "building_8.jpg",
+      "minimumPrice": 3125,
+      "bedsSummary": [1, 2],
+      "featured": false,
+      "availability": 0
+    },
+    {
+      "id": 1211,
+      "buildingName": "Riverside Quarters",
+      "address": "6 Riverside Promenade",
+      "categoryType": "residential",
+      "buildingType": {
+        "id": 18,
+        "name": "Luxury apartment"
+      },
+      "photo": "building_9.jpg",
+      "minimumPrice": 2890,
+      "bedsSummary": [1, 2, 3],
+      "featured": true,
+      "availability": 1
+    },
+    {
+      "id": 1212,
+      "buildingName": "Valley Ridge Homes",
+      "address": "280 Valley Ridge Blvd",
+      "categoryType": "residential",
+      "buildingType": {
+        "id": 7,
+        "name": "Single family home"
+      },
+      "photo": "building_10.jpg",
+      "minimumPrice": 2380,
+      "bedsSummary": [2, 3, 4],
       "featured": false,
       "availability": 1
     }
